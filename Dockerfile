@@ -1,4 +1,5 @@
+# 非常にシンプルな nginx ベースの静的配信用イメージ
 FROM nginx:alpine
-
-COPY index.html /usr/share/nginx/html/index.html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# コンテナ内のデフォルト公開場所にコピー
+COPY . /usr/share/nginx/html
+# nginx はデフォルトでポート 80 を listen しているのでそのまま使える
